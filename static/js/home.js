@@ -42,5 +42,3 @@ for(i=0;i<span.length;i++){
 }
 }
 
-
-

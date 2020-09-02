@@ -2,76 +2,94 @@
 
 
 {% block content %}
-{% for post in posts  %}
+{% include 'offers/navbar.html' %}
 
-{{post.property_name}}
-{{post.area}}
-{{post.category}}
-{{post.url}}
-
-{{post.date_published}}
-{{post.date_expired}}
-
-{% endfor %}
+<div class="row">
+    <div class="col-sm-12 mb-3">
+        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search By Location Here..">
+    </div>
+</div>
 
 
+<script>
+    function myFunction() {
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("myItems");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-text");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }</script>
 
 
 
 
 <div class="container-fluid">
-    
-    <div class="card-columns">
+
+    <div class="card-columns" id="myItems">
         {% for post in posts  %}
         <div class="">
-            <div class="card bg-light mb-3"><img alt="" class="card-img img-fluid geeks" id="geeks"
-                    src="{{post.image.url}}" />
+            <div class="card bg-light mb-3">
+                <img alt="" class="card-img img-fluid geeks" id="geeks" src="{{post.image.url}}" />
                 <div class="card-block">
-                    <h4 class="card-title">{{post.property_name}}</h4>
-                    <p class="card-text">{{post.area}}</p>
-                    <p class="card-text">{{post.category}}</p>
-                    <a href="{{post.url}}">{{post.url}}</a>
-                    <p class="card-text">{{post.date_published}}</p>
-                    <p class="card-text">{{post.date_expired}}</p>
-
+                    <h4 class="card-title">Property Name: &nbsp;{{post.property_name}}</h4>
+                    <p class="card-text">Location: &nbsp;{{post.area}}</p>
+                    <p class="card-text">Property Type: &nbsp;{{post.category}}</p>
+                    <p class="card-text link1">Property Link: &nbsp;<a href="{{post.url}}">{{post.url}}</a></p>
+                    <p class="card-text copy"> Image Copyrights:&nbsp; {{post.property_name}}  </p>
+                    <div class="card-footer">
+                        
+                        <p class="card-text date">Posted:{{post.date_published}}</p>
+                        
+                        <p class="card-text date2">Expires:{{post.date_expired}}</p> <br>
+                        
+                    </div>
 
                 </div>
             </div>
         </div>
         {% endfor %}
+        
     </div>
-    
+    <div class="mypaginator">
+            <ul class="pagination">
+
+                {% if posts.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">previous</a></li>
+                {% endif %}
+        
+                <li class="page-item"><a class="page-link" href="#"> {{ posts.number }} of {{ posts.paginator.num_pages }}</a></li>
+                
+                {% if posts.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ posts.paginator.num_pages }}">last &raquo;</a></li>
+                {% endif %}
+            </ul>    
+        </div>
 
 
 
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content img01" id="img01">
-        
+
     </div>
+
+ 
+   
+
 
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% include 'offers/footer.html' %}
 
 {% endblock content %}

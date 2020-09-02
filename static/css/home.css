@@ -130,9 +130,55 @@ body {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
 }
 
+.mypaginator{
+  align-items: center;
+  display: block;
+}
+
+ul {
+  display: inline;
+  justify-content: center;
+}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
+
+  .mypaginator{
+    float: none;
+    display: flex;
+  }
+}
+
+.card-title {
+  text-align: center;
+  font-family: 'Vietnam';font-size: 20px;
+  line-height: inherit;
+  margin-bottom: 0;
+}
+.card-text{
+  font-family: 'Baumans';font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
+
+}
+
+p {
+  
+  margin-bottom: 80px; /* between paragraphs */
+  }
+
+.date{
+  float: left;
+  
+}
+.date2{
+  float: right;
+}
+.link1{
+  text-align: center;
+}
+.copy{
+  text-align: center;
 }

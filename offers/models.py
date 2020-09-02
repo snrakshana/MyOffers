@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
 
 from django.core.validators import URLValidator
 
@@ -15,10 +17,18 @@ class OffersAd(models.Model):
     url = models.TextField(validators=[URLValidator()])
     category = models.CharField(max_length=100, null=True)
     image = models.ImageField(upload_to=upload_location, null=True)
-    date_published = models.DateTimeField(
+    date_published = models.DateField(
         auto_now_add=True, verbose_name="date published")
     date_expired = models.DateField(
          verbose_name="date Expired")
-
+    # slug = models.SlugField(blank=True, unique=True)
     def __str__(self):
-        return f"{self.property_name}-{self.area}"
+        return f"{self.property_name}-{self.date_published}"
+
+
+
+def pre_save_ad_post_receiver(sender, instance, *args, **kwargs):
+	if not instance.slug:
+		instance.slug = slugify(instance.property_name + "-" + instance.area)
+
+pre_save.connect(pre_save_ad_post_receiver, sender=OffersAd)
