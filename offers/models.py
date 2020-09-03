@@ -21,7 +21,7 @@ class OffersAd(models.Model):
         auto_now_add=True, verbose_name="date published")
     date_expired = models.DateField(
          verbose_name="date Expired")
-    # slug = models.SlugField(blank=True, unique=True)
+    slug = models.SlugField(blank=True, unique=True)
     def __str__(self):
         return f"{self.property_name}-{self.date_published}"
 
