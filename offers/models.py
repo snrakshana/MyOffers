@@ -10,12 +10,20 @@ def upload_location(instance, filename):
         area=str(instance.area), property_name=str(instance.property_name), filename=filename)
     return file_path
 
+catergory_choices = (
+    ('hotel', 'hotel'),
+    ('food', 'food'),
+    ('activities','activities'),
+    ('clothing','clothing'),
+    ('items','items'),
+    ('other','other')
+)
 
 class OffersAd(models.Model):
     property_name = models.CharField(max_length=200, null=True)
     area = models.CharField(max_length=100, null=True)
     url = models.TextField(validators=[URLValidator()])
-    category = models.CharField(max_length=100, null=True)
+    category = models.CharField(max_length=100, null=True,choices=catergory_choices)
     image = models.ImageField(upload_to=upload_location, null=True)
     date_published = models.DateField(
         auto_now_add=True, verbose_name="date published")
@@ -24,6 +32,9 @@ class OffersAd(models.Model):
     slug = models.SlugField(blank=True, unique=True)
     def __str__(self):
         return f"{self.property_name}-{self.date_published}"
+
+
+
 
 
 
