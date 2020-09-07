@@ -23,3 +23,5 @@ def homepage(request):
 
     return render(request,'offers/home.html',context)
 
+def slider(request):
+    return render(request,"offers/imageslide.html")

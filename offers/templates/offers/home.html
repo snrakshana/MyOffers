@@ -6,6 +6,7 @@
 
 
 
+
 <div class="row">
     <div class="col-sm-12 mb-3">
         <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
@@ -16,25 +17,25 @@
 
 <script>
     function myFunction() {
-    var input, filter, cards, cardContainer, h5, title, i;
-    input = document.getElementById("myFilter");
-    filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("myItems");
-    cards = cardContainer.getElementsByClassName("card");
-    for (i = 0; i < cards.length; i++) {
-        title = cards[i].querySelector(".card-text");
-        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
+        var input, filter, cards, cardContainer, h5, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("myItems");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-text");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
         }
     }
-}
 
 </script>
 
 
- 
+
 
 
 
@@ -48,34 +49,39 @@
         {{ myfilter.form.as_p }}
         <input type="submit" />
     </form>
-        <div class="card-columns " id="myItems">
-            {% for post in posts  %}
-            
-                <div class="card bg-light mb-3">
-                    <img alt="" class="card-img img-fluid geeks" id="geeks" src="{{post.image.url}}" />
-                    <div class="card-block">
-                        <h4 class="card-title">Property Name: &nbsp;{{post.property_name}}</h4>
-                        <p class="card-text">Location: &nbsp;{{post.area}}</p>
-                        <p class="card-text">Property Type: &nbsp;{{post.category}}</p>
-                        <p class="card-text link1">Property Link: &nbsp;<a href="{{post.url}}">{{post.url}}</a></p>
-                        <p class="card-text copy"> Image Copyrights:&nbsp; {{post.property_name}} </p>
 
-                        <div class="card-footer">
 
-                            <p class="card-text date">Posted:{{post.date_published}}</p>
 
-                            <p class="card-text date2">Expires:{{post.date_expired}}</p> <br>
+    <div class="card-columns " id="myItems">
+        {% for post in posts  %}
 
-                        </div>
+        <div class="card bg-light mb-3">
+            <img alt="" class="card-img img-fluid geeks" id="geeks" src="{{post.image.url}}" />
+            <div class="card-block">
+                <h4 class="card-title">Property Name: &nbsp;{{post.property_name}}</h4>
+                <p class="card-text">Location: &nbsp;{{post.area}}</p>
+                <p class="card-text">Property Type: &nbsp;{{post.category}}</p>
+                <p class="card-text link1">Property Link: &nbsp;<a href="{{post.url}}">{{post.url}}</a></p>
+                <p class="card-text copy"> Image Copyrights:&nbsp; {{post.property_name}} </p>
+                <p class="card-text copy"> Image Copyrights:&nbsp; {{post.contact_number}} </p>
+                <p class="card-text copy"> Image Copyrights:&nbsp; {{post.description}} </p>
 
-                    </div>
+                <div class="card-footer">
+
+                    <p class="card-text date">Posted:{{post.date_published}}</p>
+
+                    <p class="card-text date2">Expires:{{post.date_expired}}</p> <br>
+
                 </div>
-            
-            {% endfor %}
-        </div>
-    
 
-    
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
 
     <div class="mypaginator">
         <ul class="pagination">

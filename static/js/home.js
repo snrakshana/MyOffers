@@ -33,7 +33,6 @@ for(i=0;i<span.length;i++){
 }
 
 
-// Search bar javascript
-
+// Image slider JS
 
 

@@ -24,14 +24,16 @@ class OffersAd(models.Model):
     area = models.CharField(max_length=100, null=True)
     url = models.TextField(validators=[URLValidator()])
     category = models.CharField(max_length=100, null=True,choices=catergory_choices)
+    description = models.CharField(max_length=1000, null=True)
     image = models.ImageField(upload_to=upload_location, null=True)
+    contact_number = models.CharField(null=True, max_length=15)
     date_published = models.DateField(
         auto_now_add=True, verbose_name="date published")
     date_expired = models.DateField(
          verbose_name="date Expired")
     slug = models.SlugField(blank=True, unique=True)
     def __str__(self):
-        return f"{self.property_name}-{self.date_published}"
+        return f"{self.property_name}-{self.area}-{self.date_published}"
 
 
 
