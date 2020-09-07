@@ -1,199 +1,254 @@
-
 .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+	width: 100%;
+	height: 15vw;
+	object-fit: cover;
 }
 
-img{
-  height:auto;
-  width:auto;
-  margin:auto;
-}
-.card{
-  margin:5%;
-  box-shadow: 10px 10px 15px #333
-}
-.col{
-  height:max-content;
+.top-section {
+	margin-right: 50px;
+	margin-top: 25px;
 }
 
-
-
-.card-columns{
-  margin-right: 2%;
-  margin: auto;
-  
-  max-width: 60%;
+.search {
+	height: 50px;
+	font-family: 'Lucida Sans', serif;
+	font-size: 18px;
+	float: left;
 }
+
+input.btn {
+	background-color: #19323c;
+	border-radius: 35px;
+	padding: 0.2rem 2rem;
+	color: #f3f7f0;
+	font-size: medium;
+	font-weight: 400;
+	float: right;
+}
+
+img {
+	height: auto;
+	width: auto;
+	margin: auto;
+}
+
+.card {
+	margin: 5%;
+	box-shadow: 10px 10px 15px #333;
+}
+
+.col {
+	height: max-content;
+}
+
+.row {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	vertical-align: middle;
+	justify-content: center;
+}
+
+.card-columns {
+	margin-right: 2.5%;
+	margin: auto;
+	max-width: 60%;
+}
+
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
 }
-
-
-
 
 input[type=checkbox] {
-  display: none;
+	display: none;
 }
 
 .container img {
-  margin: 100px;
-  transition: transform 0.25s ease;
-  cursor: zoom-in;
+	margin: 100px;
+	transition: transform 0.25s ease;
+	cursor: zoom-in;
 }
 
-input[type=checkbox]:checked ~ label > img {
-  transform: scale(2);
-  cursor: zoom-out;
+input[type=checkbox]:checked~label>img {
+	transform: scale(2);
+	cursor: zoom-out;
 }
 
-body{
-  overflow-x: hidden;
+body {
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .container-fluid {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #8cbcd0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f1d072a9;
 }
 
 #myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+#myImg:hover {
+	opacity: 0.7;
+}
 
 /* The Modal (background) */
+
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	padding-top: 100px;
+	/* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9);
+	/* Black w/ opacity */
 }
 
 /* Modal Content (image) */
+
 .modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
 }
 
 /* Caption of Modal Image */
+
 #caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
 }
 
 /* Add Animation */
+
 .modal-content, #caption {
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
 }
 
 @-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)}
-  to {-webkit-transform:scale(1)}
+	from {
+		-webkit-transform: scale(0)
+	}
+	to {
+		-webkit-transform: scale(1)
+	}
 }
 
 @keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
+	from {
+		transform: scale(0)
+	}
+	to {
+		transform: scale(1)
+	}
 }
 
 /* The Close Button */
+
 .close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover, .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-.mypaginator{
-  align-items: center;
-  display: block;
+.mypaginator {
+	align-items: center;
+	display: block;
 }
 
 ul {
-  display: inline;
-  justify-content: center;
+	display: inline;
+	justify-content: center;
 }
+
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 900px){
-  .modal-content {
-    width: 100%;
-  }
 
-  .mypaginator{
-    float: none;
-    display: flex;
-  }
-
-  .card-columns{
-    max-width: 100%;
-  }
-
-
+@media only screen and (max-width: 900px) {
+	.modal-content {
+		width: 100%;
+	}
+	.mypaginator {
+		float: none;
+		display: flex;
+	}
+	.card-columns {
+		max-width: 100%;
+	}
 }
 
 .card-title {
-  text-align: center;
-  font-family: 'Vietnam';font-size: 20px;
-  line-height: inherit;
-  margin-bottom: 0;
+	text-align: center;
+	font-family: 'Vietnam';
+	font-size: 20px;
+	line-height: inherit;
+	margin-bottom: 0;
 }
-.card-text{
-  font-family: 'Baumans';font-size: 14px;
-  text-align: center;
-  margin-bottom: 0;
 
+.card-text {
+	font-family: 'Baumans';
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 0;
 }
 
 p {
-  
-  margin-bottom: 80px; /* between paragraphs */
-  }
+	margin-bottom: 80px;
+	/* between paragraphs */
+}
 
-.date{
-  float: left;
-  
+.date {
+	float: left;
 }
-.date2{
-  float: right;
+
+.date2 {
+	float: right;
 }
-.link1{
-  text-align: center;
+
+.link1 {
+	text-align: center;
 }
-.copy{
-  text-align: center;
+
+.copy {
+	text-align: center;
 }

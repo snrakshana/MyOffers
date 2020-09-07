@@ -4,17 +4,6 @@
 {% block content %}
 {% include 'offers/navbar.html' %}
 
-
-
-
-<div class="row">
-    <div class="col-sm-12 mb-3">
-        <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
-            placeholder="Search By Location Here..">
-    </div>
-</div>
-
-
 <script>
     function myFunction() {
         var input, filter, cards, cardContainer, h5, title, i;
@@ -34,30 +23,29 @@
 
 </script>
 
+<div class="container-fluid p-0 m-0">
 
+    <div class="row">
+        {% include 'offers/imageslide.html' %}
+    </div>
 
-
-
-
-
-
-
-
-<div class="container-fluid" style="align-items: center;">
-
-    <form method="get">
-        {{ myfilter.form.as_p }}
-        <input type="submit" />
-    </form>
-
-
+    <div class="row">
+        <div class="col-md-6 col-sm-12 mx-5 px-3 top-section">
+            <input type="text" id="myFilter" class="search" onkeyup="myFunction()"
+                placeholder="Search By Location Here..">
+            <form method="get">
+                {{ myfilter.form}}
+                <input type="submit" class="btn btn-sm" />
+            </form>
+        </div>
+    </div>
 
     <div class="card-columns " id="myItems">
         {% for post in posts  %}
 
-        <div class="card bg-light mb-3">
+        <div class="card mb-3" style="background-color: #f8ffe5;">
             <img alt="" class="card-img img-fluid geeks" id="geeks" src="{{post.image.url}}" />
-            <div class="card-block">
+            <div class="card-block" style="background-color: #f8ffe5;">
                 <h4 class="card-title">Property Name: &nbsp;{{post.property_name}}</h4>
                 <p class="card-text">Location: &nbsp;{{post.area}}</p>
                 <p class="card-text">Property Type: &nbsp;{{post.category}}</p>
