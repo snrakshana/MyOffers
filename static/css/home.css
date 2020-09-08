@@ -1,3 +1,20 @@
+html {
+	overflow-x: hidden;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	background-color: #f8e0b3;
+	overflow-x: inherit;
+}
+
 .card-img-top {
 	width: 100%;
 	height: 15vw;
@@ -10,20 +27,51 @@
 }
 
 .search {
-	height: 50px;
+	height: 10%;
 	font-family: 'Lucida Sans', serif;
-	font-size: 18px;
+	font-size: 10px;
+	margin-top: 5px;
+	padding: 0.2rem;
+	width: 50%;
 	float: left;
 }
 
 input.btn {
 	background-color: #19323c;
-	border-radius: 35px;
-	padding: 0.2rem 2rem;
+	border-radius: 50%;
+	padding: 0.4rem;
 	color: #f3f7f0;
-	font-size: medium;
-	font-weight: 400;
+	font-size: small;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.myform {
 	float: right;
+}
+
+@media only screen and (max-width:900px) {
+	.top-section {
+		margin-right: unset;
+		margin-top: unset;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+	}
+	.search {
+		float: unset;
+		width: 80%;
+		margin: auto;
+		margin-bottom: 2%;
+	}
+	.myform {
+		float: unset;
+		width: 100%;
+		align-content: center;
+		justify-content: center;
+		margin: 0 25%;
+	}
 }
 
 img {
@@ -50,7 +98,7 @@ img {
 }
 
 .card-columns {
-	margin-right: 2.5%;
+	margin-right: 2%;
 	margin: auto;
 	max-width: 60%;
 }
@@ -75,14 +123,6 @@ input[type=checkbox] {
 input[type=checkbox]:checked~label>img {
 	transform: scale(2);
 	cursor: zoom-out;
-}
-
-body {
-	overflow-x: hidden;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 }
 
 .container-fluid {

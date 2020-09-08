@@ -2,10 +2,12 @@
     display: none;
     width: 60%;
     margin: auto;
+    transition: all 0.6s ease;
 }
 
 img {
     vertical-align: middle;
+    margin: auto;
 }
 
 /* Slideshow container */
@@ -16,6 +18,7 @@ img {
     margin: auto;
     max-height: 300px;
     min-height: 300px;
+    transition: all 0.6s ease;
 }
 
 /* Caption text */
@@ -43,13 +46,7 @@ img {
 /* The dots/bullets/indicators */
 
 .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+    display: none;
 }
 
 .active {
@@ -60,20 +57,25 @@ img {
 
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 3.5s;
+    -webkit-animation-duration: 5.5s;
     animation-name: fade;
-    animation-duration: 3.5s;
+    animation-duration: 5.5s;
+    transition: all 0.6s ease;
 }
 
 .mySlides img {
+    padding: 1%;
     width: 100%;
+    margin-left: 2%;
     max-height: 300px;
     min-height: 300px;
+    margin: auto;
+    transition: all 0.6s ease;
 }
 
 @-webkit-keyframes fade {
     from {
-        opacity: .6
+        opacity: .4
     }
     to {
         opacity: 1
@@ -82,7 +84,7 @@ img {
 
 @keyframes fade {
     from {
-        opacity: .6
+        opacity: .4
     }
     to {
         opacity: 1

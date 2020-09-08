@@ -33,9 +33,9 @@
         <div class="col-md-6 col-sm-12 mx-5 px-3 top-section">
             <input type="text" id="myFilter" class="search" onkeyup="myFunction()"
                 placeholder="Search By Location Here..">
-            <form method="get">
+            <form method="get" class="myform">
                 {{ myfilter.form}}
-                <input type="submit" class="btn btn-sm" />
+                <input type="submit" class="btn btn-sm" value="go"/>
             </form>
         </div>
     </div>
@@ -72,7 +72,7 @@
 
 
     <div class="mypaginator">
-        <ul class="pagination">
+        <ul class="pagination m-0 p-3">
 
             {% if posts.has_previous %}
             <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
